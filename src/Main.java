@@ -12,6 +12,7 @@ public class Main {
             System.out.println("\n=== MENU ===");
             System.out.println("1 - Cadastrar pessoa");
             System.out.println("2 - Listar pessoas");
+            System.out.println("3 - Remover pessoa");
             System.out.println("0 - Sair");
             System.out.print("Escolha: ");
 
@@ -31,6 +32,16 @@ public class Main {
 
             } else if (opcao == 2) {
                 cadastro.listar();
+
+            } else if (opcao == 3) {
+                System.out.print("Nome da pessoa para remover: ");
+                String nome = sc.nextLine();
+
+                if (cadastro.removerPorNome(nome)) {
+                    System.out.println("Pessoa removida com sucesso!");
+                } else {
+                    System.out.println("Pessoa não encontrada.");
+                }
             }
 
         } while (opcao != 0);

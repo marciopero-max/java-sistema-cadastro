@@ -18,4 +18,20 @@ public class Cadastro {
             }
         }
     }
+
+    public boolean removerPorNome(String nome) {
+        nome = nome.trim();
+
+        for (Pessoa p : pessoas) {
+            if (p.getNome().trim().equalsIgnoreCase(nome)) {
+                pessoas.remove(p);
+                return true;
+            }
+        }
+        return false;
+    
+          
+        
+       
+    }
 }
